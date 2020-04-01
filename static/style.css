@@ -1,0 +1,16 @@
+.panel-content{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.jumbo-container {
+    background: url(img/mty.jpg);
+    color: #727272;
+    font-size: 59;
+    height: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px #ccc;
+}
