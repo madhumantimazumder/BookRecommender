@@ -1,10 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Site Name??
+  </a>
+  <button class="nav-btn" (click)="isShowBook=false">Want Recommendation?</button>
+</nav>
 <header class="panel-header">
-  <div class="jumbo-container d-flex justify-content-center align-items-center ">
+  <div class="jumbo-container d-flex justify-content-center align-items-center flex-column">
       <h4>Find Yourself Something New to Read</h4>
   </div>
 </header>
-
-<app-book-tile></app-book-tile>
+<app-book-tile *ngIf="isShowBook"></app-book-tile>
+<app-recommendation *ngIf="!isShowBook"></app-recommendation>
 <footer>
   <div class="home-genres container">
       <div class="home-genres__container">
@@ -13,7 +20,7 @@
         </div>
         <div class="home-genres__tiles">
             <button class="home-genres__tile" >Science Fiction</button>
-            <button class="home-genres__tile" (click)="showAdv()">Adventure Stories</button>
+            <button class="home-genres__tile" (click)="showGenre()">Adventure Stories</button>
             <button class="home-genres__tile" href="/">Fantasy Fiction</button>
             <button class="home-genres__tile" href="/">Romance</button>
             <button class="home-genres__tile" href="/">Novel</button>

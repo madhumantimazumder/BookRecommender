@@ -77,3 +77,20 @@
 .author-font{
     font-size: 13px;
 }
+
+.nav-btn{
+    background: transparent;
+    border-radius: 7.5px;
+    padding: 10px;
+    color: inherit;
+    font-size: 14px;
+    border-color: ghostwhite;
+    letter-spacing: 1px;
+    border: 1px solid #aaa;
+}
+.nav-btn:hover{
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.08);
+}
+.navbar{
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.08);
+}

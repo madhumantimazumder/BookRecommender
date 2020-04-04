@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
 import { UtilityService } from './services/utility.service';
 
 @Component({
@@ -9,14 +8,15 @@ import { UtilityService } from './services/utility.service';
 })
 export class AppComponent {
   title = 'webApp';
-  genre : Observable<String> ;
+  isShowBook : boolean =true;
   constructor(private utilityService: UtilityService){
 
   }
-  ngOninit() : void{
+  ngOninit(){
     this.utilityService.setGenre("all");
   }
-  showAdv(){
+  showGenre(){
+    this.isShowBook=true;
     this.utilityService.setGenre("adv");
   }
 }
