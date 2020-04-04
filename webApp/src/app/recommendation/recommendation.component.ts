@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommendation.component.css']
 })
 export class RecommendationComponent implements OnInit {
-
+  isCollapsed: number =1;
   constructor() { }
 
   ngOnInit(): void {

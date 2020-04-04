@@ -22,11 +22,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/img"
+              "src/assets/img",
+              "src/assets/webfonts"
             ],
             "styles": [
               "src/assets/css/bootstrap.min.css",
-              "src/assets/style.css"
+              "src/assets/style.css",
+              "src/assets/css/all.min.css"
             ],
             "scripts": [
               "src/assets/js/jquery-3.4.1.min.js",

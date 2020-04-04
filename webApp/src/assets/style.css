@@ -94,3 +94,22 @@
 .navbar{
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.08);
 }
+.recommendation-option #accordion .card{
+    margin-top: 25px;
+}
+.recommendation-option .card-header{
+    background: transparent;
+}
+.recommendation-option h5{
+    width: 100%;
+}
+.recommendation-option h5 button{
+    width: 100%;
+}
+
+.recommendation-option button[aria-expanded=true] .fa-plus-circle {
+    display: none;
+ }
+ .recommendation-option button[aria-expanded=false] .fa-minus-circle {
+    display: none;
+ }

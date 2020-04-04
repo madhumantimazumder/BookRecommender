@@ -38,7 +38,7 @@ export class BookTileComponent implements OnInit {
     });
   }
   ngOnDestroy(){
-    //this.genre_subscription.unsubscribe();
+    this.genre_subscription.unsubscribe();
   }
 
 }
