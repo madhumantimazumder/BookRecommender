@@ -1,8 +1,16 @@
-<a class="book-card row"> 
-    <div class="col-6">                
-        <img src="../../assets/img/DY.jpg" alt="" class="img fiction">
+<div class="panel-content container">
+    <div class="row">
+        <div class=" col-md-4 col-12" *ngFor="let book of books">
+            <a class="book-card row"> 
+                <div class="col-6">                
+                    <img src="../../assets/img/DY.jpg" alt="" class="img fiction">
+                </div>   
+                <div class="col-6 d-flex flex-column justify-content-center text-center">
+                    <p>
+                        {{book}}
+                    </p>
+                </div>
+            </a>
+        </div>
     </div>   
-    <div class="col-6 d-flex flex-column justify-content-center text-center">
-        <p>Did you ever have a family</p>
-    </div>
-</a>
+</div>
