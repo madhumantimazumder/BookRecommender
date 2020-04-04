@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GenreComponent } from './genre/genre.component';
+import { BookTileComponent } from './book-tile/book-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GenreComponent
+    GenreComponent,
+    BookTileComponent
   ],
   imports: [
     BrowserModule,
