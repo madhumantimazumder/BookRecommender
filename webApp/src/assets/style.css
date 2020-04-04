@@ -71,3 +71,9 @@
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
     border: 0;
 }
+.name-font{
+    font-style: oblique;
+}
+.author-font{
+    font-size: 13px;
+}

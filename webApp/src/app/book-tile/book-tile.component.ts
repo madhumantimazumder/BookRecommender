@@ -10,15 +10,23 @@ import { UtilityService } from '../services/utility.service';
 export class BookTileComponent implements OnInit {
   genre_subscription:Subscription;
          
-  books: Array<number>;
+  books: Array<Object>;
   constructor(private utilityService: UtilityService) {
-      this.books=[1,2,3];
+      this.books=[
+        {"name":"Wings of Fire",
+        "author":"A P J Abdul Kalam, Arun Tiwari"
+        },
+        {"name":"Harry Potter and the Half-Blood Prince",
+        "author":"J K Rowling"
+        }
+      ]
    }
 
   ngOnInit() {
     this.genre_subscription = this.utilityService.getGenre().subscribe(data => {  
       if (data.genre=="adv") {         
-        this.books=[2,3];    
+        this.books=[{"name":"Adventures of Stainless Steel Rat","author":"Harry Harrison"},
+        {"name":"Guardians of the Flame","author":"Joel Rosenberg"}];    
       }  
     });
   }
