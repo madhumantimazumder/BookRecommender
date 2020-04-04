@@ -9,6 +9,7 @@ import { UtilityService } from './services/utility.service';
 export class AppComponent {
   title = 'webApp';
   isShowBook : boolean =true;
+  home="home";
   constructor(private utilityService: UtilityService){
 
   }

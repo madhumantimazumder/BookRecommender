@@ -10,7 +10,7 @@
       <h4>Find Yourself Something New to Read</h4>
   </div>
 </header>
-<app-book-tile *ngIf="isShowBook"></app-book-tile>
+<app-book-tile [page]="home" *ngIf="isShowBook"></app-book-tile>
 <app-recommendation *ngIf="!isShowBook"></app-recommendation> 
 <footer>
   <div class="home-genres container">

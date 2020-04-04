@@ -9,32 +9,35 @@ import { UtilityService } from '../services/utility.service';
 })
 export class BookTileComponent implements OnInit {
   genre_subscription:Subscription;
-         
+  @Input() page;       
   books: Array<Object>;
   constructor(private utilityService: UtilityService) {
       
    }
 
   ngOnInit() {
-    this.books=[
-      {"name":"Wings of Fire",
-      "author":"A P J Abdul Kalam, Arun Tiwari"
-      },
-      {"name":"Harry Potter and the Half-Blood Prince",
-      "author":"J K Rowling"
-      },
-      {"name":"Harry Potter and the Half-Blood Prince",
-      "author":"J K Rowling"
-      },
-      {"name":"Harry Potter and the Half-Blood Prince",
-      "author":"J K Rowling"
-      }
-    ]
+    
     this.genre_subscription = this.utilityService.getGenre().subscribe(data => {  
       if (data.genre=="adv") {         
         this.books=[{"name":"Adventures of Stainless Steel Rat","author":"Harry Harrison"},
         {"name":"Guardians of the Flame","author":"Joel Rosenberg"}];    
       }  
+      else {
+        this.books=[
+          {"name":"Wings of Fire",
+          "author":"A P J Abdul Kalam, Arun Tiwari"
+          },
+          {"name":"Harry Potter and the Half-Blood Prince",
+          "author":"J K Rowling"
+          },
+          {"name":"Harry Potter and the Half-Blood Prince",
+          "author":"J K Rowling"
+          },
+          {"name":"Harry Potter and the Half-Blood Prince",
+          "author":"J K Rowling"
+          }
+        ]
+      }
     });
   }
   ngOnDestroy(){

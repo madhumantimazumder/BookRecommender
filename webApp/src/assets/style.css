@@ -113,3 +113,16 @@
  .recommendation-option button[aria-expanded=false] .fa-minus-circle {
     display: none;
  }
+ .btn-link{
+    color: #009999;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-decoration: none;
+ }
+ .btn-link:hover{
+    text-decoration: none;
+    color: #009999;
+ }
+ .btn-link:focus{
+    text-decoration: none;
+ }
