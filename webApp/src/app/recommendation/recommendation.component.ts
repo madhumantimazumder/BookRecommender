@@ -23,13 +23,13 @@ export class RecommendationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.utility_service.setBooks("")   ;
   }
   sendUsername(){
-      this.utility_service.setReccomendationType("uname");
-      this.recommendation="username";
-      this.utility_service.fetchDataUsingUsername(this.checkoutForm.value.uname).subscribe((data)=>{                
+      this.utility_service.fetchDataUsingUsername(this.checkoutForm.value.uname).subscribe((data)=>{                          
                this.utility_service.setBooks(data)   ;
+               this.recommendation="username";
+               this.utility_service.setReccomendationType("uname");   
       },
       (error)=>{
 

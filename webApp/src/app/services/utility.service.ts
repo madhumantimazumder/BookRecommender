@@ -54,16 +54,9 @@ export class UtilityService {
   getReccomendationType(){  
     return this.recommendation_type;  
   }
-  setBooks(booktype){
-       if(booktype == "adv"){
-         this.setAvdBook();
-       }
-       else if(booktype=="all"){
-         this.setAllBook();
-       }
-       else{
-         this.books=[];
-       }
+  setBooks(booktype){      
+         this.books=booktype;
+       
   }
   getBooks(){
     return this.books;

@@ -11,12 +11,24 @@ export class AppComponent {
   isShowBook : boolean =true;
   home="home";
   constructor(private utilityService: UtilityService){
+    this.utilityService.fetchDataUsingUsername("uname").subscribe((data)=>{ 
+      this.utilityService.setBooks(data)   ;
+      this.utilityService.setGenre("all");
+    },
+    (error)=>{
 
+    });
   }
   
   showGenre(){
     this.isShowBook=true;
-    this.utilityService.setGenre("adv");
+    this.utilityService.fetchDataUsingUsername("uname").subscribe((data)=>{ 
+      this.utilityService.setBooks(data)   ;
+      this.utilityService.setGenre("adv");
+    },
+    (error)=>{
+
+    });
   }
 }
 
