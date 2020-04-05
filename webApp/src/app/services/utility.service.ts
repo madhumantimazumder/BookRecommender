@@ -62,7 +62,7 @@ export class UtilityService {
   getBooks(){
     return this.books;
   }
-  
+
   fetchDataUsingUsername(username){
       let serviceData = {
         "username": username
@@ -73,17 +73,17 @@ export class UtilityService {
       serviceData,
       (successData) => {
         console.log(successData);
-        // if(successData.status!=200){
-        //     let error = "serviceFailureMsg";
-        //     return {
-        //         'error': error
-        //     };
-        // } else {
+        if(successData.status.code!=200){
+            let error = "serviceFailureMsg";
+            return {
+                'error': error
+            };
+        } else {
             return {
 
-                'data': successData.bookslist
+                'data': successData.response.bookslist
             };
-        // }
+       }
     },true);
   }
   /*----funtions to be removed----*/
