@@ -29,7 +29,7 @@ export class RecommendationComponent implements OnInit {
       this.utility_service.setReccomendationType("uname");
       this.recommendation="username";
       this.utility_service.fetchDataUsingUsername(this.checkoutForm.value.uname).subscribe((data)=>{                
-               this.utility_service.setBooks("all")   ;
+               this.utility_service.setBooks(data)   ;
       },
       (error)=>{
 
