@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UtilityService {
-  private genre_subject = new BehaviorSubject<any>(''); 
+  private genre_subject = new BehaviorSubject<any>('');
   private recommendation_type = new BehaviorSubject<any>('');
   constructor(private http: HttpClient) { }
   books: Array<Object>;
 
-  serviceWrapper (serviceURL, requestData, successHandler, post?){ 
+  serviceWrapper (serviceURL, requestData, successHandler, post?){
     var responseSubject = new Subject<any>();
     if(!!post){
       this.http.post(serviceURL, requestData).subscribe(function (data) {
@@ -41,46 +41,50 @@ export class UtilityService {
     }
     return responseSubject;
   }
-  
-  setGenre(genre: string) {  
-    this.genre_subject.next({ genre: genre });  
+
+  setGenre(genre: string) {
+    this.genre_subject.next({ genre: genre });
   }
-  getGenre(){  
-    return this.genre_subject;  
+  getGenre(){
+    return this.genre_subject;
   }
-  setReccomendationType(type: string) {  
-    this.recommendation_type.next({ rec_type: type });  
+  setReccomendationType(type: string) {
+    this.recommendation_type.next({ rec_type: type });
   }
-  getReccomendationType(){  
-    return this.recommendation_type;  
+  getReccomendationType(){
+    return this.recommendation_type;
   }
-  setBooks(booktype){      
-         this.books=booktype;
-       
+
+  setBooks(books){
+         this.books=books;
   }
+
   getBooks(){
     return this.books;
   }
+  
   fetchDataUsingUsername(username){
       let serviceData = {
         "username": username
       };
+        // "/json/booklist.json",
     return this.serviceWrapper(
-      //environment.API_URL
-      "/json/booklist.json",
+      environment.API_URL,
       serviceData,
       (successData) => {
-        if(successData.status.code!=200){
-            let error = "serviceFailureMsg";
+        console.log(successData);
+        // if(successData.status!=200){
+        //     let error = "serviceFailureMsg";
+        //     return {
+        //         'error': error
+        //     };
+        // } else {
             return {
-                'error': error
+
+                'data': successData.bookslist
             };
-        } else {
-            return {
-                'data': successData.response.booklist
-            };
-        } 
-    });
+        // }
+    },true);
   }
   /*----funtions to be removed----*/
   setAllBook(){
@@ -97,12 +101,12 @@ export class UtilityService {
       {"name":"Harry Potter and the Half-Blood Prince",
       "author":"J K Rowling"
       }
-    ] 
+    ]
   }
   setAvdBook(){
     this.books=[{"name":"Adventures of Stainless Steel Rat","author":"Harry Harrison"},
-        {"name":"Guardians of the Flame","author":"Joel Rosenberg"}]; 
-    
+        {"name":"Guardians of the Flame","author":"Joel Rosenberg"}];
+
   }
-  
+
 }
