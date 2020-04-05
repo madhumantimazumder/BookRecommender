@@ -88,6 +88,11 @@
     letter-spacing: 1px;
     border: 1px solid #aaa;
 }
+@media only screen and (max-width: 576px) {
+    .nav-btn {
+      font-size: 10px;
+    }
+  }
 .nav-btn:hover{
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.08);
 }
@@ -113,6 +118,17 @@
  .recommendation-option button[aria-expanded=false] .fa-minus-circle {
     display: none;
  }
+ @media only screen and (max-width: 576px) {
+    .recommendation-option button .fa-plus-circle {
+        display: none;
+     }
+     .recommendation-option button .fa-minus-circle {
+        display: none;
+     }
+     .recommendation-option button span {        
+        font-size: 9px;
+     }
+  }
  .btn-link{
     color: #009999;
     letter-spacing: 1px;
@@ -136,4 +152,11 @@
   }
   .active-cyan-4  .fa-search{
       color: #009999;
+  }
+  .recommendation-option .form-group ,.form-inline{
+      margin-top: 10px;
+  }
+  .recommendation-option .form-group label{
+    letter-spacing: .7px;
+    font-size: 13px;
   }

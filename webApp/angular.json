@@ -23,7 +23,9 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/img",
-              "src/assets/webfonts"
+              "src/assets/webfonts",
+              "src/json" 
+
             ],
             "styles": [
               "src/assets/css/bootstrap.min.css",

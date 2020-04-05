@@ -16,32 +16,35 @@ export class BookTileComponent implements OnInit {
    }
 
   ngOnInit() {
-    
-    this.genre_subscription = this.utilityService.getGenre().subscribe(data => {  
-      if (data.genre=="adv") {         
-        this.books=[{"name":"Adventures of Stainless Steel Rat","author":"Harry Harrison"},
-        {"name":"Guardians of the Flame","author":"Joel Rosenberg"}];    
-      }  
-      else {
-        this.books=[
-          {"name":"Wings of Fire",
-          "author":"A P J Abdul Kalam, Arun Tiwari"
-          },
-          {"name":"Harry Potter and the Half-Blood Prince",
-          "author":"J K Rowling"
-          },
-          {"name":"Harry Potter and the Half-Blood Prince",
-          "author":"J K Rowling"
-          },
-          {"name":"Harry Potter and the Half-Blood Prince",
-          "author":"J K Rowling"
-          }
-        ]
-      }
-    });
+    if(this.page=="home"){   
+      this.genre_subscription = this.utilityService.getGenre().subscribe(data => {  
+        if (data.genre=="adv") {         
+          this.utilityService.setBooks("adv");    
+        } 
+        else{          
+          this.utilityService.setBooks("all");   
+        }        
+        this.books=this.utilityService.getBooks();
+      });
+    }
+    else{
+      this.genre_subscription = this.utilityService.getReccomendationType().subscribe(data => {  
+        if (data.rec_type=="uname") {         
+          this.utilityService.setBooks("adv");    
+        } 
+        else if(data.rec_type=="search"){          
+          this.utilityService.setBooks("all");   
+        }      
+        else{
+          this.utilityService.setBooks("clear");
+        }  
+        this.books=this.utilityService.getBooks();
+      });
+    }
   }
   ngOnDestroy(){
-    this.genre_subscription.unsubscribe();
+    if(!!this.genre_subscription)
+      this.genre_subscription.unsubscribe();
   }
 
 }

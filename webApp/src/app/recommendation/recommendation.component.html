@@ -14,42 +14,43 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     we will recommend you books taking into account all the books you have rated.
-                    <form class=row>
-                        <div class="form-group col-6">
+                    <form [formGroup]="checkoutForm" class=row (ngSubmit)="sendUsername()">
+                        <div class="form-group col-12 col-md-6">
                             <label for="username" class=" col-form-label">Goodreads Username</label>
                             
-                            <input type="text" class="form-control" id="username" >
+                            <input formControlName="uname" type="text" class="form-control" id="username" >
                             
                         </div>
                         <div class="col-6 d-flex align-items-end mb-3">
-                            <button type="submit" class="btn btn-primary username-btn">Submit</button>
+                            <button type="submit" class="btn btn-primary username-btn" >Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
             </div>
             <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                <button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseTwo" 
-                (click)="isCollapsed = 2" [attr.aria-expanded]="(isCollapsed==2)" aria-controls="collapseTwo">
-                    <span>Want recommendations based on a book you like?</span>
-                    <span class="fas fa-plus-circle"></span>
-                    <span class="fas fa-minus-circle"></span>
-                </button>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                    we will recommend you most similar books based on book you have chosen 
-                    <form class="form-inline active-cyan-4">
-                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                          aria-label="Search">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </form>
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                    <button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseTwo" 
+                    (click)="isCollapsed = 2" [attr.aria-expanded]="(isCollapsed==2)" aria-controls="collapseTwo">
+                        <span>Want recommendations based on a book you like?</span>
+                        <span class="fas fa-plus-circle"></span>
+                        <span class="fas fa-minus-circle"></span>
+                    </button>
+                    </h5>
                 </div>
-                
-            </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        we will recommend you most similar books based on book you have chosen 
+                        <form class="form-inline active-cyan-4">
+                            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                            aria-label="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </form>
+                    </div>
+                    
+                </div>
             </div>
         </div>
    </div>
+   <app-book-tile [page]="recommendation" ></app-book-tile>

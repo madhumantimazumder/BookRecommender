@@ -13,9 +13,7 @@ export class AppComponent {
   constructor(private utilityService: UtilityService){
 
   }
-  ngOninit(){
-    this.utilityService.setGenre("all");
-  }
+  
   showGenre(){
     this.isShowBook=true;
     this.utilityService.setGenre("adv");
