@@ -62,14 +62,36 @@ export class UtilityService {
   getBooks(){
     return this.books;
   }
+  fetchDataUsingGenre(genre?){
+    let serviceData = {
+      "genre": genre
+    };
+      // environment.API_URL
+  return this.serviceWrapper(
+    "/json/genrebooklist.json",
+    serviceData,
+    (successData) => {
+      console.log(successData);
+      if(successData.status.code!=200){
+          let error = "serviceFailureMsg";
+          return {
+              'error': error
+          };
+      } else {
+          return {
 
+              'data': successData.response.bookslist
+          };
+     }
+  });
+  }
   fetchDataUsingUsername(username){
       let serviceData = {
         "username": username
       };
-        // "/json/booklist.json",
+        // environment.API_URL
     return this.serviceWrapper(
-      environment.API_URL,
+      "/json/booklist.json",
       serviceData,
       (successData) => {
         console.log(successData);
@@ -84,7 +106,7 @@ export class UtilityService {
                 'data': successData.response.bookslist
             };
        }
-    },true);
+    });
   }
   /*----funtions to be removed----*/
   setAllBook(){

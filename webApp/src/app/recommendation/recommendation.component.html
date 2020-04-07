@@ -43,9 +43,18 @@
                     <div class="card-body">
                         we will recommend you most similar books based on book you have chosen 
                         <form class="form-inline active-cyan-4">
-                            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                            aria-label="Search">
-                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <div class="input-group mb-3 position-relative w-75"> 
+                                <input class="form-control form-control-sm " type="text" placeholder="Search"
+                                aria-label="Search">
+                                <div class="input-group-append ">
+                                    <i class="fas fa-search input-group-text" aria-hidden="true"></i>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-right show position-absolute" aria-labelledby="mkdocs-search-query" id="mkdocs-search-results">
+                                    <a class="dropdown-item">Getting Started</a>
+                                    <a class="dropdown-item" href="../#quick-start">Quick start</a>
+                                </div>
+                            </div>                            
+                            
                         </form>
                     </div>
                     

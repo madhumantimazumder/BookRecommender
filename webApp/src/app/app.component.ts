@@ -22,8 +22,8 @@ export class AppComponent {
   
   showGenre(){
     this.isShowBook=true;
-    this.utilityService.fetchDataUsingUsername("uname").subscribe((data)=>{ 
-      this.utilityService.setBooks(data)   ;
+    this.utilityService.fetchDataUsingGenre("avd").subscribe((data)=>{ 
+      this.utilityService.setBooks(data) ;
       this.utilityService.setGenre("adv");
     },
     (error)=>{
