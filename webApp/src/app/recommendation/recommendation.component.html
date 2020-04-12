@@ -16,14 +16,12 @@
                     we will recommend you books taking into account all the books you have rated.
                     <form [formGroup]="checkoutForm" class=row (ngSubmit)="sendUsername()">
                         <div class="form-group col-12 col-md-6">
-                            <label for="username" class=" col-form-label">Goodreads Username</label>
-                            
+                            <label for="username" class=" col-form-label">Goodreads Username</label>                            
                             <input formControlName="uname" type="text" class="form-control" id="username" >
-                            
-                        </div>
+                        </div>                        
                         <div class="col-6 d-flex align-items-end mb-3">
-                            <button type="submit" class="btn btn-primary username-btn" >Submit</button>
-                        </div>
+                            <button [disabled]="!checkoutForm.valid" type="submit" class="btn btn-primary username-btn" >Submit</button>
+                        </div>                        
                     </form>
                 </div>
             </div>
