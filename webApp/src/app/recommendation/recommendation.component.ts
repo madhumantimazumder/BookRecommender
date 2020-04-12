@@ -16,12 +16,18 @@ import {
 export class RecommendationComponent implements OnInit {
   isCollapsed: number =1;
   checkoutForm;
+  searchForm;
+  searchText;
   recommendation:string="recommendation";
   constructor(private utility_service  :UtilityService) {
     this.checkoutForm =  new FormGroup({
       "uname": new FormControl(null, [Validators.required]),
     });
+    this.searchForm =  new FormGroup({
+      "searchName": new FormControl(null),
+    });
   }
+  
   books=[
     {"name":"Wings of Fire",
     "author":"A P J Abdul Kalam, Arun Tiwari"

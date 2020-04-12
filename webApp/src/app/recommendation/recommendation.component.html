@@ -41,13 +41,13 @@
                     <div class="card-body">
                         we will recommend you most similar books based on book you have chosen 
                         
-                        <form class="form-inline active-cyan-4">
+                        <form [formGroup]="searchForm" class="form-inline active-cyan-4">
                             <div class="dropdown input-group mb-3 position-relative w-75"> 
                                 <div class="input-group-prepend ">
                                     <i class="fas fa-search input-group-text" aria-hidden="true"></i>
                                 </div>
                                 <input class="form-control form-control-sm dropdown-toggle" data-toggle="dropdown" type="text" placeholder="Search"
-                                aria-label="Search" id="book-search-query" autocomplete="off" aria-expanded="false" [(ngModel)]="searchText" >                                    
+                                aria-label="Search" id="book-search-query" autocomplete="off" aria-expanded="false" [(ngModel)]="searchText" formControlName="searchName">                                    
                                 <div class="dropdown-menu dropdown-menu-right position-absolute" aria-labelledby="book-search-query" id="book-search-results">
                                     <a *ngFor="let book of books | filter:searchText" class="dropdown-item">
                                         {{book.name}}</a>
