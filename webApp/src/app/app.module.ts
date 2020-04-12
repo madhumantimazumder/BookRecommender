@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { RecommendationComponent } from './recommendation/recommendation.compone
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [UtilityService],
   bootstrap: [AppComponent]

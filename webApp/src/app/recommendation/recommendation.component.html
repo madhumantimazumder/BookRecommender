@@ -47,10 +47,10 @@
                                     <i class="fas fa-search input-group-text" aria-hidden="true"></i>
                                 </div>
                                 <input class="form-control form-control-sm dropdown-toggle" data-toggle="dropdown" type="text" placeholder="Search"
-                                aria-label="Search" id="book-search-query" autocomplete="off" aria-expanded="false">                                
+                                aria-label="Search" id="book-search-query" autocomplete="off" aria-expanded="false" [(ngModel)]="searchText" >                                    
                                 <div class="dropdown-menu dropdown-menu-right position-absolute" aria-labelledby="book-search-query" id="book-search-results">
-                                    <a class="dropdown-item">Getting Started</a>
-                                    <a class="dropdown-item" href="../#quick-start">Quick start</a>
+                                    <a *ngFor="let book of books | filter:searchText" class="dropdown-item">
+                                        {{book.name}}</a>
                                 </div>
                             </div>                     
                             

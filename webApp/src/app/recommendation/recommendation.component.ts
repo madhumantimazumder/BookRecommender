@@ -22,7 +22,20 @@ export class RecommendationComponent implements OnInit {
       "uname": new FormControl(null, [Validators.required]),
     });
   }
-
+  books=[
+    {"name":"Wings of Fire",
+    "author":"A P J Abdul Kalam, Arun Tiwari"
+    },
+    {"name":"Harry Potter and the Half-Blood Prince",
+    "author":"J K Rowling"
+    },
+    {"name":"Harry Potter and the Half-Blood Prince",
+    "author":"J K Rowling"
+    },
+    {"name":"Harry Potter and the Half-Blood Prince",
+    "author":"J K Rowling"
+    }
+  ]
   ngOnInit(): void {
     this.utility_service.setBooks("")   ;
   }
