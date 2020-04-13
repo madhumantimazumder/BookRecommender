@@ -171,3 +171,11 @@
   form .dropdown-item.active, .dropdown-item:active{
         background-color: #f8f9fa;
   }
+  #collapseTwo .dropdown-menu a{
+    white-space: pre-wrap;
+  }
+
+  .username-btn.btn-primary.disabled, .username-btn.btn-primary:disabled{
+    background-color: #009999;;
+    border-color: #009999;
+  }
