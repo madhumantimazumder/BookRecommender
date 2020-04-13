@@ -1,11 +1,3 @@
-/*.panel-content{
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-}*/
-
 .jumbo-container {
     background: url(img/mty.jpg);
     color: #727272;
@@ -35,12 +27,13 @@
     background-color: #fff;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
 }
-.home-genres__tile:hover{
+.home-genres__tile:hover,.home-genres__tile:disabled{
     text-decoration: none;
     color: #4c4c4c;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
     border: 0;
 }
+
 .home-genres__title::after{
     content: "";
     background-color: #E7B366;
@@ -144,9 +137,11 @@
  }
  .username-btn{
     background-color: #009999;
+    border-color: #009999;
  }
  .username-btn:hover{
     background-color: #009999;
+    border-color: #009999;
  }
 .active-cyan-4 input[type=text]:focus:not([readonly]) {
     border-bottom: 1px solid #009999;
@@ -176,6 +171,10 @@
   }
 
   .username-btn.btn-primary.disabled, .username-btn.btn-primary:disabled{
+    background-color: #009999;;
+    border-color: #009999;
+  }
+  .username-btn.btn-primary:not(:disabled):not(.disabled):active{
     background-color: #009999;;
     border-color: #009999;
   }

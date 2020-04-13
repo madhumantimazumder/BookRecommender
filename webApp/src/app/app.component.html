@@ -20,8 +20,8 @@
         </div>
         <div class="home-genres__tiles">
             <button class="home-genres__tile" >Science Fiction</button>
-            <button class="home-genres__tile" (click)="showGenre()">Adventure Stories</button>
-            <button class="home-genres__tile" href="/">Fantasy Fiction</button>
+            <button class="home-genres__tile" [disabled]="active_genre=='adv'" (click)="showGenre('adv')">Adventure Stories</button>
+            <button class="home-genres__tile" [disabled]="active_genre=='ff'" (click)="showGenre('ff')">Fantasy Fiction</button>
             <button class="home-genres__tile" href="/">Romance</button>
             <button class="home-genres__tile" href="/">Novel</button>
             <button class="home-genres__tile" href="/">Mystery</button>

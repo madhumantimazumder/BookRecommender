@@ -8,6 +8,7 @@ import { UtilityService } from './services/utility.service';
 })
 export class AppComponent {
   title = 'webApp';
+  active_genre;
   isShowBook : boolean =true;
   home="home";
   constructor(private utilityService: UtilityService){
@@ -20,11 +21,12 @@ export class AppComponent {
     });
   }
   
-  showGenre(){
+  showGenre(genre){
+    this.active_genre=genre;
     this.isShowBook=true;
-    this.utilityService.fetchDataUsingGenre("avd").subscribe((data)=>{ 
+    this.utilityService.fetchDataUsingGenre(this.active_genre).subscribe((data)=>{ 
       this.utilityService.setBooks(data) ;
-      this.utilityService.setGenre("adv");
+      this.utilityService.setGenre(this.active_genre);
     },
     (error)=>{
 
