@@ -32,5 +32,9 @@ export class AppComponent {
 
     });
   }
+  showRecommend(){
+    this.isShowBook=false ;
+    this.active_genre='none';
+  }
 }
 
