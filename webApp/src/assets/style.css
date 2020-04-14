@@ -92,6 +92,13 @@
 .navbar{
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.08);
 }
+.navbar a{
+    padding: 0;
+}
+.navbar a img{
+    height: 50px;
+    width: 70px;
+}
 .recommendation-option #accordion .card{
     margin-top: 25px;
 }
