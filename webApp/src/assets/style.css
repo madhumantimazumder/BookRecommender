@@ -105,6 +105,12 @@
     height: 50px;
     width: 70px;
 }
+@media only screen and (max-width: 576px) {
+    .navbar a img {
+        height: 40px;
+        width: 50px;
+    }
+}
 .recommendation-option #accordion .card{
     margin-top: 25px;
 }
