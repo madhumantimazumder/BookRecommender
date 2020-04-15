@@ -193,6 +193,8 @@
   }
   .pages__container{
       margin-top: 20px;
+      width: 100%;
+      max-width: 340px;
   }
   .pages__container p{
       margin-top: 35px;
