@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { UtilityService } from '../services/utility.service';
-import { BookTileComponent } from '../book-tile/book-tile.component';
 import {
   FormGroup,
   FormControl,

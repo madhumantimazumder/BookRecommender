@@ -81,11 +81,17 @@
     letter-spacing: 1px;
     border: 1px solid #aaa;
 }
+.header-btns button{
+    margin-left: 23px;
+}
 @media only screen and (max-width: 576px) {
     .nav-btn {
       font-size: 10px;
     }
-  }
+    .header-btns button{
+        margin-left: 5px;
+    }
+}
 .nav-btn:hover{
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.08);
 }
@@ -185,3 +191,20 @@
     background-color: #009999;;
     border-color: #009999;
   }
+  .pages__container{
+      margin-top: 20px;
+  }
+  .pages__container p{
+      margin-top: 35px;
+      margin-bottom: 35px;
+  }
+  .pages__container h2::after {
+    content: "";
+    background-color: #E7B366;
+    width: 100px;
+    height: 1px;
+    display: flex;
+    margin: 20px auto;
+  }
+
+  

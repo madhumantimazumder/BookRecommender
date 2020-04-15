@@ -14,7 +14,7 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     we will recommend you books taking into account all the books you have rated.
-                    <form [formGroup]="checkoutForm" class=row (ngSubmit)="sendUsername()">
+                    <form [formGroup]="checkoutForm" class=row (ngSubmit)="sendUsername()" id="usernameform">
                         <div class="form-group col-12 col-md-6">
                             <label for="username" class=" col-form-label">Goodreads Username</label>                            
                             <input formControlName="uname" type="text" class="form-control" id="username" >
@@ -41,7 +41,7 @@
                     <div class="card-body">
                         we will recommend you most similar books based on book you have chosen 
                         
-                        <form [formGroup]="searchForm" class="form-inline active-cyan-4">
+                        <form [formGroup]="searchForm" class="form-inline active-cyan-4" id="searchForm">
                             <div class="dropdown input-group mb-3 position-relative w-100"> 
                                 <div class="input-group-prepend ">
                                     <i class="fas fa-search input-group-text" aria-hidden="true"></i>
