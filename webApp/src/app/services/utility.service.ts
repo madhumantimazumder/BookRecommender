@@ -91,7 +91,7 @@ export class UtilityService {
       };
         // environment.API_URL
     return this.serviceWrapper(
-      "/json/booklist.json",
+      environment.API_URL,
       serviceData,
       (successData) => {
         console.log(successData);
