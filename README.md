@@ -10,3 +10,10 @@ Corresponding flask application -
 ```
 https://github.com/appy385/flask-sample
 ```
+Database
+
+```
+mysqld --initialize-insecure
+mysqld --console
+mysql -h book-recommender-db.ckt9u6nlihrw.us-east-1.rds.amazonaws.com -P 3306 -u root -p
+```
