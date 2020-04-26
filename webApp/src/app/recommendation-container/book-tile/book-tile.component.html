@@ -1,17 +1,19 @@
 <div class="panel-content container">
     <div class="row">
         <div class=" col-md-4 col-12" *ngFor="let book of books">
-            <a class="book-card row"> 
-                <div class="col-6">                
-                    <img src="../../assets/img/DY.jpg" alt="" class="img fiction">
-                </div>   
-                <div class="col-6 d-flex flex-column justify-content-center text-center">
-                    <p class="name-font">
-                        {{book.name}}
-                    </p>
-                    <p class="author-font">
-                        {{book.author}}
-                    </p>
+            <a class="book-card d-flex"> 
+                <div class="book-row">
+                    <div class="book-cover">                
+                        <img src="../../assets/img/DY.jpg" alt="" class="img fiction">
+                    </div>   
+                    <div class="book-info d-flex flex-column justify-content-center text-center align-content-center align-items-center">
+                        <p class="name-font">
+                            {{book.name}}
+                        </p>
+                        <p class="author-font">
+                            {{book.author}}
+                        </p>
+                    </div>
                 </div>
             </a>
         </div>
