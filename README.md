@@ -16,4 +16,5 @@ Database
 mysqld --initialize-insecure
 mysqld --console
 mysql -h book-recommender-db.ckt9u6nlihrw.us-east-1.rds.amazonaws.com -P 3306 -u root -p
+password -> admin123
 ```
