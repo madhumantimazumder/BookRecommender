@@ -18,3 +18,7 @@ mysqld --console
 mysql -h book-recommender-db.ckt9u6nlihrw.us-east-1.rds.amazonaws.com -P 3306 -u root -p
 password -> admin123
 ```
+Document for front end setup
+```
+https://docs.google.com/document/d/1BZTxcspx75kZXpsNBRtXMleWm5Zf2Cnj3Wz4XccdKXo/edit
+```
