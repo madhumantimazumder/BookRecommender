@@ -68,21 +68,21 @@ export class UtilityService {
     };
       // environment.API_URL
   return this.serviceWrapper(
-    "/json/genrebooklist.json",
+    environment.API_URL+genre,
     serviceData,
     (successData) => {
-      console.log(successData);
-      if(successData.status.code!=200){
-          let error = "serviceFailureMsg";
-          return {
-              'error': error
-          };
-      } else {
+      // console.log(successData);
+      // if(successData.status.code!=200){
+      //     let error = "serviceFailureMsg";
+      //     return {
+      //         'error': error
+      //     };
+      // } else {
           return {
 
-              'data': successData.response.bookslist
+              'data': successData.bookslist
           };
-     }
+     //}
   });
   }
   fetchDataUsingUsername(username){

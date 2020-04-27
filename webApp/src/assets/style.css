@@ -90,9 +90,15 @@
 .name-font{
     font-style: oblique;
     font-size: 14px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
 }
 .author-font{
     font-size: 12px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
 }
 
 .nav-btn{

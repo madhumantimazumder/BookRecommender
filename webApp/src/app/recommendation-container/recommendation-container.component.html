@@ -31,7 +31,7 @@
               <h4 class="text-center">Popular Genres</h4>
           </div>
           <div class="home-genres__tiles">
-              <button class="btn home-genres__tile" >Science Fiction</button>
+              <button class="btn home-genres__tile" [disabled]="active_genre=='scifi'"  (click)="showGenre('scifi')">Science Fiction</button>
               <button class="btn home-genres__tile" [disabled]="active_genre=='adv'" (click)="showGenre('adv')">Adventure Stories</button>
               <button class="btn home-genres__tile" [disabled]="active_genre=='ff'" (click)="showGenre('ff')">Fantasy Fiction</button>
               <button class="btn home-genres__tile" href="/">Romance</button>
