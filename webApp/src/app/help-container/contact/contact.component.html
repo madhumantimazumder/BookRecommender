@@ -5,7 +5,7 @@
             <p class="pages__byline">
              We welcome your feedback and ideas!
             </p>
-            <form id="contact-form" [formGroup]="contactForm" >
+            <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="sendContact()">
               <div class="form-group">
                 <input formControlName="name" class="form-control"  type="text" name="name" placeholder="Name" value="">
               </div>

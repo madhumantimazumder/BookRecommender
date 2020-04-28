@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject ,Subject } from 'rxjs';
 import { environment  } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import {
+  FormGroup,
+  FormControl,
+  Validators
+} from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
@@ -66,6 +71,22 @@ export class UtilityService {
 
   getBooks(){
     return this.books;
+  }
+  sendContactData(form : FormGroup){
+    var serviceData={
+        'name':form.controls['name'].value,
+        'email':form.controls['email'].value,
+        'message':form.controls['message'].value
+    };
+    return this.serviceWrapper(
+      'http://127.0.0.1:5000/contact',
+      serviceData,
+      (successData) => {
+            return {
+                'data': successData
+            };
+       //}
+    },true);
   }
   fetchDataUsingGenre(genre?){
     let serviceData = {
