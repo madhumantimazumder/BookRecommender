@@ -6,6 +6,19 @@ https://medium.com/analytics-vidhya/tutorial-how-to-deploy-an-angular-app-with-a
 
 username/password for freenom account -yabaser312@2go-mail.com/madhumanti
 ```
+
+Run the code-
+
+```
+For first time -
+Install node
+Install angular cli
+Clone the codebase
+Run npm install
+
+To build the code-
+Run ng serve
+```
 Corresponding flask application -
 ```
 https://github.com/appy385/flask-sample
