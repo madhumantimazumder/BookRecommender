@@ -7,12 +7,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UtilityService {
   private genre_subject = new BehaviorSubject<any>('');
+  display_loading = new Subject<any>();
   private recommendation_type = new BehaviorSubject<any>('');
   constructor(private http: HttpClient) { }
   books: Array<Object>;
 
   serviceWrapper (serviceURL, requestData, successHandler, post?){
     var responseSubject = new Subject<any>();
+    this.display_loading.next(true);
     if(!!post){
       this.http.post(serviceURL, requestData).subscribe(function (data) {
         var result = successHandler(data);
@@ -39,6 +41,9 @@ export class UtilityService {
         responseSubject.error("serviceFailureMsg");
       });
     }
+    setTimeout(() => {
+      this.display_loading.next(false);
+    }, 1400);
     return responseSubject;
   }
 
