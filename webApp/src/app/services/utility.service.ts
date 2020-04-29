@@ -87,7 +87,7 @@ export class UtilityService {
         'message':form.controls['message'].value
     };
     return this.serviceWrapper(
-      'http://127.0.0.1:5000/contact',
+      environment.API_URL+'contact',
       serviceData,
       (successData) => {
             return {
