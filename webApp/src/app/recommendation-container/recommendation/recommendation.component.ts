@@ -49,7 +49,6 @@ export class RecommendationComponent implements OnInit {
                this.recommendation="username";
                this.utility_service.setReccomendationType("uname");
       }, (error)=>{
-
       });
   }
 }

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject ,Subject } from 'rxjs';
+import {
+  tap
+} from "rxjs/operators";
 import { environment  } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import {
@@ -21,7 +24,11 @@ export class UtilityService {
     var responseSubject = new Subject<any>();
     this.display_loading.next(true);
     if(!!post){
-      this.http.post(serviceURL, requestData).subscribe(function (data) {
+      this.http.post(serviceURL, requestData).pipe(  
+        tap(_ => (
+          this.display_loading.next(false)
+          ))     
+      ).subscribe(function (data) {
         var result = successHandler(data);
         if (!!result.error) {
             responseSubject.error(result.error);
@@ -34,7 +41,11 @@ export class UtilityService {
       });
     }
     else{
-      this.http.get(serviceURL).subscribe(function (data) {
+      this.http.get(serviceURL).pipe(  
+        tap(_ => (
+          this.display_loading.next(false)
+          ))     
+      ).subscribe(function (data) {
         var result = successHandler(data);
         if (!!result.error) {
             responseSubject.error(result.error);
@@ -46,9 +57,6 @@ export class UtilityService {
         responseSubject.error("serviceFailureMsg");
       });
     }
-    setTimeout(() => {
-      this.display_loading.next(false);
-    }, 1400);
     return responseSubject;
   }
 

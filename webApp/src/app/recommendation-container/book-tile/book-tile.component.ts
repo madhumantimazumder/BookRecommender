@@ -17,28 +17,13 @@ export class BookTileComponent implements OnInit {
 
   ngOnInit() {
     if(this.page=="home"){   
-      this.genre_subscription = this.utilityService.getGenre().subscribe(data => {  
-        // if (data.genre=="adv") {         
-        //   this.utilityService.setBooks("adv");    
-        // } 
-        // else{          
-        //   this.utilityService.setBooks("all");   
-        // }        
+      this.genre_subscription = this.utilityService.getGenre().subscribe(data => {         
         this.books=this.utilityService.getBooks();
       });
     }
     else{
       this.genre_subscription = this.utilityService.getReccomendationType().subscribe(data => {  
-        // if (data.rec_type=="uname") {         
-        //    this.utilityService.setBooks("adv");    
-        // } 
-        // else if(data.rec_type=="search"){          
-        //   this.utilityService.setBooks("all");   
-        // }      
-        // else{
-        //   this.utilityService.setBooks("clear");
-        // }  
-        this.books=this.utilityService.getBooks();
+          this.books=this.utilityService.getBooks();
       });
     }
   }

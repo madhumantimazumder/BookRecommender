@@ -27,11 +27,9 @@ export class ContactComponent implements OnInit {
   }
   sendContact(){
     this.utilityService.sendContactData(this.contactForm).subscribe((data)=>{ 
-      this.utilityService.setBooks(data)   ;
-      this.utilityService.setGenre("all");
+      this.contactForm.reset();
     },
     (error)=>{
-
     });
   }
 }

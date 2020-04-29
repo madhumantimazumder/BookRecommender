@@ -15,14 +15,14 @@ export class AppComponent {
    
   }
   ngAfterViewInit(){
-    // let element = this.elem.nativeElement.querySelectorAll('.spinner') as HTMLElement;
-    // this.utility_service.display_loading.subscribe(function(t) {
-    //     if(t==true)
+    let element = this.elem.nativeElement.querySelectorAll('.spinner') as HTMLElement;
+    this.utility_service.display_loading.subscribe(function(t) {
+        if(t==true)
 
-    //       element[0].style.display='block';
-    //     else
-    //       element[0].style.display='none';
-    // });
+          element[0].style.display='block';
+        else
+          element[0].style.display='none';
+    });
   }
 }
 

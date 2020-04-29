@@ -267,6 +267,7 @@
     to { transform: rotate(360deg); }
   } 
   .spinner{
+      display: none;
       z-index: 1;
       position: fixed;
       height: 100vh;

@@ -25,9 +25,10 @@ export class RecommendationContainerComponent implements OnInit {
     this.utilityService.fetchDataUsingUsername("uname").subscribe((data)=>{ 
       this.utilityService.setBooks(data)   ;
       this.utilityService.setGenre("all");
+      
     },
     (error)=>{
-
+      
     });
   }
   redirectTo(url){
@@ -50,7 +51,6 @@ export class RecommendationContainerComponent implements OnInit {
       this.utilityService.setGenre(this.active_genre);
     },
     (error)=>{
-
     });
   }
   showFeature(f){
