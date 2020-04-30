@@ -50,7 +50,7 @@
     background: #fff;
     color: #000;
     margin: 25px;
-    height: 220px;
+    height: 255px;
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
@@ -211,10 +211,13 @@
   form .dropdown-menu{
     left: 0;
     right: 0;
+    max-height: 250px;
+    overflow-y: auto;
   }
-  form .dropdown-item.active, .dropdown-item:active{
-        background-color: #f8f9fa;
+  form .dropdown-item.active, form .dropdown-item:hover{
+        background-color: #ebf7f7;
   }
+  
   #collapseTwo .dropdown-menu a{
     white-space: pre-wrap;
   }

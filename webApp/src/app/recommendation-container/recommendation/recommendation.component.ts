@@ -16,6 +16,7 @@ export class RecommendationComponent implements OnInit {
   checkoutForm;
   searchForm;
   searchText;
+  books;
   recommendation:string="recommendation";
   constructor(private utility_service  :UtilityService) {
     this.checkoutForm =  new FormGroup({
@@ -26,22 +27,10 @@ export class RecommendationComponent implements OnInit {
     });
   }
   
-  books=[
-    {"name":"Wings of Fire",
-    "author":"A P J Abdul Kalam, Arun Tiwari"
-    },
-    {"name":"Harry Potter and the Half-Blood Prince",
-    "author":"J K Rowling"
-    },
-    {"name":"Harry Potter and the Half-Blood Prince",
-    "author":"J K Rowling"
-    },
-    {"name":"Harry Potter and the Half-Blood Prince",
-    "author":"J K Rowling"
-    }
-  ]
+ 
   ngOnInit(): void {
     this.utility_service.setBooks("")   ;
+    this.getAllBooks();
   }
   sendUsername(){
       this.utility_service.fetchDataUsingUsername(this.checkoutForm.value.uname).subscribe((data)=>{
@@ -50,5 +39,20 @@ export class RecommendationComponent implements OnInit {
                this.utility_service.setReccomendationType("uname");
       }, (error)=>{
       });
+  }
+  getAllBooks(){
+    this.utility_service.fetchAll().subscribe((data)=>{
+      this.utility_service.setBooks(data)   ;
+      this.books=this.utility_service.getBooks();
+    }, (error)=>{
+    });
+  }
+  getRecommendation(booktitle){
+    this.utility_service.fetchDataUsingBook(booktitle).subscribe((data)=>{
+      this.utility_service.setBooks(data)   ;
+      this.recommendation="book";
+      this.utility_service.setReccomendationType("book");
+    }, (error)=>{
+    });
   }
 }

@@ -49,7 +49,7 @@
                                 <input class="form-control form-control-sm dropdown-toggle" data-toggle="dropdown" type="text" placeholder="Search"
                                 aria-label="Search" id="book-search-query" autocomplete="off" aria-expanded="false" [(ngModel)]="searchText" formControlName="searchName">                                    
                                 <div class="dropdown-menu dropdown-menu-right position-absolute" aria-labelledby="book-search-query" id="book-search-results">
-                                    <a *ngFor="let book of books | filter:searchText" class="dropdown-item">
+                                    <a *ngFor="let book of books | filter:searchText" class="dropdown-item" (click)="getRecommendation([book.name])">
                                         {{book.name}}</a>
                                 </div>
                             </div>                     

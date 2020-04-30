@@ -105,15 +105,7 @@ export class UtilityService {
     environment.API_URL+genre,
     serviceData,
     (successData) => {
-      // console.log(successData);
-      // if(successData.status.code!=200){
-      //     let error = "serviceFailureMsg";
-      //     return {
-      //         'error': error
-      //     };
-      // } else {
           return {
-
               'data': successData.bookslist
           };
      //}
@@ -142,27 +134,51 @@ export class UtilityService {
        }
     });
   }
-  /*----funtions to be removed----*/
-  setAllBook(){
-    this.books=[
-      {"name":"Wings of Fire",
-      "author":"A P J Abdul Kalam, Arun Tiwari"
-      },
-      {"name":"Harry Potter and the Half-Blood Prince",
-      "author":"J K Rowling"
-      },
-      {"name":"Harry Potter and the Half-Blood Prince",
-      "author":"J K Rowling"
-      },
-      {"name":"Harry Potter and the Half-Blood Prince",
-      "author":"J K Rowling"
-      }
-    ]
-  }
-  setAvdBook(){
-    this.books=[{"name":"Adventures of Stainless Steel Rat","author":"Harry Harrison"},
-        {"name":"Guardians of the Flame","author":"Joel Rosenberg"}];
+  fetchDataUsingBook(title){
+    let serviceData = {
+      "title": title
+    };
+      // environment.API_URL
+  return this.serviceWrapper(
+    environment.API_URL,
+    serviceData,
+    (successData) => {
+      console.log(successData);
+      if(successData.status.code!=200){
+          let error = "serviceFailureMsg";
+          return {
+              'error': error
+          };
+      } else {
+          return {
 
-  }
+              'data': successData.response.bookslist
+          };
+     }
+  });
+}
+  fetchAll(){
+    let serviceData = {
+      "username": ''
+    };
+      // environment.API_URL
+  return this.serviceWrapper(
+    environment.API_URL,
+    serviceData,
+    (successData) => {
+      console.log(successData);
+      if(successData.status.code!=200){
+          let error = "serviceFailureMsg";
+          return {
+              'error': error
+          };
+      } else {
+          return {
+
+              'data': successData.response.bookslist
+          };
+     }
+  });
+}
 
 }
