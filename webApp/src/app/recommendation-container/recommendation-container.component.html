@@ -32,15 +32,13 @@
           </div>
           <div class="home-genres__tiles">
               <button class="btn home-genres__tile" [disabled]="active_genre=='scifi'"  (click)="showGenre('scifi')">Science Fiction</button>
-              <button class="btn home-genres__tile" [disabled]="active_genre=='adv'" (click)="showGenre('adv')">Adventure Stories</button>
-              <button class="btn home-genres__tile" [disabled]="active_genre=='ff'" (click)="showGenre('ff')">Fantasy Fiction</button>
-              <button class="btn home-genres__tile" href="/">Romance</button>
-              <button class="btn home-genres__tile" href="/">Novel</button>
-              <button class="btn home-genres__tile" href="/">Mystery</button>
-              <button class="btn home-genres__tile" href="/">Poetry</button>
-              <button class="btn home-genres__tile" href="/">Biography</button>
-              <button class="btn home-genres__tile" href="/">Horror</button>
-              <button class="btn home-genres__tile" href="/">Crime Fiction</button>
+              <button class="btn home-genres__tile" [disabled]="active_genre=='adventure'" (click)="showGenre('adventure')">Adventure Stories</button>
+              <button class="btn home-genres__tile"  [disabled]="active_genre=='romance'" (click)="showGenre('romance')">Romance</button>
+              <button class="btn home-genres__tile" [disabled]="active_genre=='comics'" (click)="showGenre('comics')">Comics</button>
+              <button class="btn home-genres__tile"  [disabled]="active_genre=='poetry'" (click)="showGenre('poetry')">Poetry</button>
+              <button class="btn home-genres__tile" [disabled]="active_genre=='bio'" (click)="showGenre('bio')">Biography</button>
+              <button class="btn home-genres__tile"  [disabled]="active_genre=='horror'" (click)="showGenre('horror')">Horror</button>
+              <button class="btn home-genres__tile" [disabled]="active_genre=='comedy'" (click)="showGenre('comedy')">Comedy</button>
           </div>
         </div>
     </div>
