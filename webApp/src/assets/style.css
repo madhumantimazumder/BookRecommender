@@ -221,7 +221,9 @@
   #collapseTwo .dropdown-menu a{
     white-space: pre-wrap;
   }
-
+  a.dropdown-item{
+      cursor: pointer;
+  }
   .username-btn.btn-primary.disabled, .username-btn.btn-primary:disabled{
     background-color: #009999;;
     border-color: #009999;
