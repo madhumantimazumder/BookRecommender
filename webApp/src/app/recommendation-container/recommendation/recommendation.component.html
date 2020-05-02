@@ -18,10 +18,12 @@
                         <div class="form-group col-12 col-md-6">
                             <label for="username" class=" col-form-label">Goodreads Username</label>                            
                             <input formControlName="uname" type="text" class="form-control" id="username" >
+                            <p class="error-message" *ngIf="error_message">{{error_message}}</p>  
                         </div>                        
-                        <div class="col-6 d-flex align-items-end mb-3">
+                        <div class="col-6">
                             <button [disabled]="!checkoutForm.valid" type="submit" class="btn btn-primary username-btn" >Submit</button>
-                        </div>                        
+                        </div>  
+                                            
                     </form>
                 </div>
             </div>

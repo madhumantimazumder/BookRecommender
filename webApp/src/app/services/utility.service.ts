@@ -115,23 +115,20 @@ export class UtilityService {
       let serviceData = {
         "username": username
       };
-        // environment.API_URL
+      
     return this.serviceWrapper(
-      environment.API_URL,
+      environment.API_URL+"/goodreads_id/"+username,
       serviceData,
       (successData) => {
-        console.log(successData);
-        if(successData.status.code!=200){
-            let error = "serviceFailureMsg";
-            return {
-                'error': error
-            };
-        } else {
-            return {
-
-                'data': successData.response.bookslist
-            };
-       }
+        if(successData.status){
+          return {
+            'error': successData.error_message}
+        }  
+        else {
+          return {
+            'data': successData.response.bookslist
+          };
+        }
     });
   }
   fetchDataUsingBook(title){

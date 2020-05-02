@@ -187,6 +187,12 @@
  .username-btn{
     background-color: #009999;
     border-color: #009999;
+    
+ }
+ @media only screen and (min-width: 768px) {
+    .username-btn {
+        margin-top : 43px;
+    }
  }
  .username-btn:hover{
     background-color: #009999;
@@ -294,4 +300,9 @@
 }
 .display-none{
     display: none;
+}
+.error-message{
+    color: red;
+    letter-spacing: .6px;
+    font-size: 14px;
 }

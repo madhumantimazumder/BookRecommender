@@ -17,6 +17,7 @@ export class RecommendationComponent implements OnInit {
   searchForm;
   searchText;
   books;
+  error_message;
   recommendation:string="recommendation";
   constructor(private utility_service  :UtilityService) {
     this.checkoutForm =  new FormGroup({
@@ -33,11 +34,13 @@ export class RecommendationComponent implements OnInit {
     this.getAllBooks();
   }
   sendUsername(){
+      this.error_message="";
       this.utility_service.fetchDataUsingUsername(this.checkoutForm.value.uname).subscribe((data)=>{
                this.utility_service.setBooks(data)   ;
                this.recommendation="username";
-               this.utility_service.setReccomendationType("uname");
+               this.utility_service.setReccomendationType("uname");               
       }, (error)=>{
+               this.error_message=error;
       });
   }
   getAllBooks(){
