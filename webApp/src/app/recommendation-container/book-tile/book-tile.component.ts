@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UtilityService } from '../../services/utility.service';
-
+import {Book} from "../../models/Book"; 
 @Component({
   selector: 'app-book-tile',
   templateUrl: './book-tile.component.html',
@@ -10,7 +10,7 @@ import { UtilityService } from '../../services/utility.service';
 export class BookTileComponent implements OnInit {
   genre_subscription:Subscription;
   @Input() page;       
-  books: Array<Object>;
+  public books: Book[];
   constructor(private utilityService: UtilityService) {
       
    }
@@ -19,6 +19,7 @@ export class BookTileComponent implements OnInit {
     if(this.page=="home"){   
       this.genre_subscription = this.utilityService.getGenre().subscribe(data => {         
         this.books=this.utilityService.getBooks();
+        //console.log(this.books[0].getBooktitle());
       });
     }
     else{

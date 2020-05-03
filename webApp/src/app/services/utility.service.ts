@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject ,Subject } from 'rxjs';
+import { BehaviorSubject ,Subject,Observable } from 'rxjs';
 import {
   tap
 } from "rxjs/operators";
@@ -10,6 +10,9 @@ import {
   FormControl,
   Validators
 } from '@angular/forms';
+import {Book} from "../models/Book"; 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,9 +20,10 @@ export class UtilityService {
   private genre_subject = new BehaviorSubject<any>('');
   display_loading = new Subject<any>();
   private recommendation_type = new BehaviorSubject<any>('');
-  constructor(private http: HttpClient) { }
-  books: Array<Object>;
+  private books:Book[];
 
+  constructor(private http: HttpClient) { }
+  
   serviceWrapper (serviceURL, requestData, successHandler, post?){
     var responseSubject = new Subject<any>();
     this.display_loading.next(true);
@@ -73,11 +77,11 @@ export class UtilityService {
     return this.recommendation_type;
   }
 
-  setBooks(books){
-         this.books=books;
+  setBooks(booklist){
+    this.books=booklist.map((book: Book) => new Book().deserialize(book));
   }
 
-  getBooks(){
+  getBooks():Book[]{
     return this.books;
   }
   sendContactData(form : FormGroup){

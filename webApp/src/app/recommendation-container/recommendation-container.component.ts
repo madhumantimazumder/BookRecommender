@@ -22,14 +22,14 @@ export class RecommendationContainerComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.utilityService.fetchDataUsingUsername("uname").subscribe((data)=>{ 
-      this.utilityService.setBooks(data)   ;
-      this.utilityService.setGenre("all");
+    // this.utilityService.fetchDataUsingUsername("uname").subscribe((data)=>{ 
+    //   this.utilityService.setBooks(data)   ;
+    //   this.utilityService.setGenre("all");
       
-    },
-    (error)=>{
+    // },
+    // (error)=>{
       
-    });
+    // });
   }
   redirectTo(url){
     this.router.navigateByUrl(url);
