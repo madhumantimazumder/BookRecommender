@@ -30,7 +30,7 @@ export class RecommendationComponent implements OnInit {
   
  
   ngOnInit(): void {
-    this.utility_service.setBooks("")   ;
+    this.utility_service.setBooks([])   ;
     this.getAllBooks();
   }
   sendUsername(){

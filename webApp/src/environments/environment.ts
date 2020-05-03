@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false ,
-  API_URL : 'http://bookaholicservices.ml/'
+  API_URL : 'https://bookaholicservices.ml/'
 };
 
 /*
