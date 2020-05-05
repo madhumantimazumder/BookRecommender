@@ -31,7 +31,6 @@ export class RecommendationComponent implements OnInit {
  
   ngOnInit(): void {
     this.utility_service.setBooks([])   ;
-    this.getAllBooks();
   }
   sendUsername(){
       this.error_message="";
@@ -44,6 +43,7 @@ export class RecommendationComponent implements OnInit {
       });
   }
   getAllBooks(){
+    this.isCollapsed = 2
     this.utility_service.fetchAll().subscribe((data)=>{
       this.utility_service.setBooks(data)   ;
       this.books=this.utility_service.getBooks();
