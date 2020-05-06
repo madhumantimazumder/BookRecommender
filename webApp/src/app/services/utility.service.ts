@@ -21,7 +21,7 @@ export class UtilityService {
   display_loading = new Subject<any>();
   private recommendation_type = new BehaviorSubject<any>('');
   private books:Book[];
-
+  private booktitles;
   constructor(private http: HttpClient) { }
   
   serviceWrapper (serviceURL, requestData, successHandler, post?){
@@ -63,7 +63,12 @@ export class UtilityService {
     }
     return responseSubject;
   }
-
+  setBooktitles(titles){
+      this.booktitles=titles;
+  }
+  getBooktitles(){
+    return this.booktitles;
+  }
   setGenre(genre: string) {
     this.genre_subject.next({ genre: genre });
   }
@@ -159,26 +164,17 @@ export class UtilityService {
   });
 }
   fetchAll(){
-    let serviceData = {
-      "username": ''
-    };
+   
       // environment.API_URL
   return this.serviceWrapper(
-    environment.API_URL,
-    serviceData,
-    (successData) => {
-      console.log(successData);
-      if(successData.status.code!=200){
-          let error = "serviceFailureMsg";
-          return {
-              'error': error
-          };
-      } else {
+    environment.API_URL+'title',
+    "",
+    (successData) => {      
           return {
 
-              'data': successData.response.bookslist
+              'data': successData.titles
           };
-     }
+     
   });
 }
 

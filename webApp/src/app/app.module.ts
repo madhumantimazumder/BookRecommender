@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,7 +32,7 @@ import { HelpContainerComponent } from './help-container/help-container.componen
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    Ng2SearchPipeModule
+    FilterPipeModule
   ],
   providers: [UtilityService],
   bootstrap: [AppComponent]

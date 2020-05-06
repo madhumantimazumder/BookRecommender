@@ -214,7 +214,7 @@
     font-size: 13px;
   }
 
-  form .dropdown-menu{
+  #searchForm .dropdown-menu{
     left: 0;
     right: 0;
     max-height: 250px;

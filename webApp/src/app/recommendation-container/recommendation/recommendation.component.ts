@@ -17,20 +17,22 @@ export class RecommendationComponent implements OnInit {
   searchForm;
   searchText;
   books;
+  booktitle;
   error_message;
   recommendation:string="recommendation";
   constructor(private utility_service  :UtilityService) {
     this.checkoutForm =  new FormGroup({
       "uname": new FormControl(null, [Validators.required]),
     });
-    this.searchForm =  new FormGroup({
-      "searchName": new FormControl(null),
-    });
+    //this.searchForm =  new FormGroup({
+      //"searchName": new FormControl(null),
+   // });
   }
   
  
   ngOnInit(): void {
-    this.utility_service.setBooks([])   ;
+    this.utility_service.setBooks([]) ;  
+    
   }
   sendUsername(){
       this.error_message="";
@@ -44,11 +46,17 @@ export class RecommendationComponent implements OnInit {
   }
   getAllBooks(){
     this.isCollapsed = 2
-    this.utility_service.fetchAll().subscribe((data)=>{
-      this.utility_service.setBooks(data)   ;
-      this.books=this.utility_service.getBooks();
-    }, (error)=>{
-    });
+    if(this.utility_service.getBooktitles()==undefined || this.utility_service.getBooktitles()==""){
+      this.utility_service.fetchAll().subscribe((data)=>{      
+            this.utility_service.setBooktitles(data);
+            this.books=this.utility_service.getBooktitles();
+            
+      }, (error)=>{
+      });
+    }
+    else{
+      this.books=this.utility_service.getBooktitles();
+    }
   }
   getRecommendation(booktitle){
     this.utility_service.fetchDataUsingBook(booktitle).subscribe((data)=>{
@@ -58,4 +66,6 @@ export class RecommendationComponent implements OnInit {
     }, (error)=>{
     });
   }
+  
+  
 }
