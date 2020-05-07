@@ -220,8 +220,8 @@
     max-height: 250px;
     overflow-y: auto;
   }
-  form .dropdown-item.active, form .dropdown-item:hover{
-        background-color: #ebf7f7;
+  #searchForm .dropdown-item.active,#searchForm .dropdown-item:active, #searchForm .dropdown-item:hover{
+        background-color: #d1ebeb;
   }
   
   #collapseTwo .dropdown-menu a{
