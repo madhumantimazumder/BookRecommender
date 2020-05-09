@@ -163,7 +163,7 @@ export class UtilityService {
      }
   });
 }
-  fetchAll(){
+fetchAll(){
    
       // environment.API_URL
   return this.serviceWrapper(
@@ -177,5 +177,18 @@ export class UtilityService {
      
   });
 }
+fetchPopular(){
+   
+  // environment.API_URL
+    return this.serviceWrapper(
+    environment.API_URL+'popular',
+    "",
+    (successData) => {      
+          return {
 
+              'data': successData
+          };
+    
+    });
+    }
 }
