@@ -14,7 +14,7 @@ For first time -
 Install node
 Install angular cli
 Clone the codebase
-Run npm install
+Run npm install inside webapp
 
 To build the code-
 Run ng serve
