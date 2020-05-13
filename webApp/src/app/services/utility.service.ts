@@ -10,7 +10,7 @@ import {
   FormControl,
   Validators
 } from '@angular/forms';
-import {Book} from "../models/Book"; 
+import { Book } from "../models/book"; 
 //https://ng-bootstrap.github.io/#/components/rating/api
 
 @Injectable({

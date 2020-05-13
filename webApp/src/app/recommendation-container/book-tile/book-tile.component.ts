@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UtilityService } from '../../services/utility.service';
-import {Book} from "../../models/Book"; 
+import {Book} from "../../models/book"; 
 @Component({
   selector: 'app-book-tile',
   templateUrl: './book-tile.component.html',
