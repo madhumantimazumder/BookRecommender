@@ -6,13 +6,13 @@ export class Book {
     goodreads_book_id;
     image_url;
     isbn;
-    original_title;   
+    title;   
 
     deserialize(input: any) : this{
         Object.assign(this, input);
         return this;
     }
     getBooktitle(){
-        return this.original_title;
+        return this.title;
     }
 }
