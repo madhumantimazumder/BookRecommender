@@ -111,11 +111,11 @@ export class UtilityService {
     };
       // environment.API_URL
   return this.serviceWrapper(
-    environment.API_URL+genre,
+    environment.API_URL+'genre/'+genre,
     serviceData,
     (successData) => {
           return {
-              'data': successData.bookslist
+              'data': successData
           };
      //}
   });
@@ -124,7 +124,7 @@ export class UtilityService {
       let serviceData = {
         "username": username
       };
-      
+
     return this.serviceWrapper(
       environment.API_URL+"/goodreads_id/"+username,
       serviceData,
@@ -146,11 +146,10 @@ export class UtilityService {
     };
       // environment.API_URL
   return this.serviceWrapper(
-    environment.API_URL,
+    environment.API_URL_TITLE+title,
     serviceData,
     (successData) => {
-      console.log(successData);
-      if(successData.status.code!=200){
+      if(!successData){
           let error = "serviceFailureMsg";
           return {
               'error': error
@@ -158,7 +157,7 @@ export class UtilityService {
       } else {
           return {
 
-              'data': successData.response.bookslist
+              'data': successData
           };
      }
   });
