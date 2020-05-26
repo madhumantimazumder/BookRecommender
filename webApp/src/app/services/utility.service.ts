@@ -146,7 +146,7 @@ export class UtilityService {
     };
       // environment.API_URL
   return this.serviceWrapper(
-    environment.API_URL_TITLE+title,
+    environment.API_URL+'recommend/booktitle/'+title,
     serviceData,
     (successData) => {
       if(!successData){

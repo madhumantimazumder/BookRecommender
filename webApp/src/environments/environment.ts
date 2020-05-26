@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false ,
-  API_URL : 'https://bookloungeservices.live/',
-  API_URL_TITLE : 'https://bookloungeservices.live/recommend/booktitle/'
+  API_URL : 'https://bookloungeservices.live/'
 };
 
 /*
