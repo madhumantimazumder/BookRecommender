@@ -1,7 +1,7 @@
 <div class="panel-content container">    
     <div class="row">
         <div class=" col-md-4 col-12" *ngFor="let book of books">
-            <a class="book-card d-flex" target="_blank" [href]="'https://www.amazon.com/s/?keywords='+book.original_title"> 
+            <a class="book-card d-flex" target="_blank" [href]="'https://www.amazon.com/s/?keywords='+book.title"> 
                 <div class="book-row">
                     <div class="book-cover">                
                         <img src={{book.image_url}} alt="" class="img fiction">
