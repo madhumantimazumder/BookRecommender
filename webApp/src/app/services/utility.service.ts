@@ -135,7 +135,7 @@ export class UtilityService {
         }  
         else {
           return {
-            'data': successData.response.bookslist
+            'data': successData
           };
         }
     });
